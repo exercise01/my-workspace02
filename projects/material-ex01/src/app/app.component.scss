@@ -1,0 +1,14 @@
+
+
+//   :root {
+//     @include mat.sidenav-overrides((
+//       container-background-color: orange,
+//       container-text-color: red,
+//     ));
+//   } 
+  
+  mat-sidenav {
+    width: 200px;
+    //container-background-color: orange,
+    //container-text-color: red,
+  }
