@@ -1,20 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+
 @use '@angular/material' as mat;
-@use '../../../_theme-colors' as my-theme; // location of generated file
+//@use '@angular/material-experimental' as matx;
+@use '../../../_theme-colors' as my-theme; 
 
 @include mat.core();
 
-html {
-  @include mat.theme((
-    color: (
-      primary: my-theme.$primary-palette,
-      tertiary: my-theme.$tertiary-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}
+//mat.$azure-palette;
+//$primary: my-theme.$primary-palette(primary,30);
+$primary: my-theme.$primary-palette;
+//$primary: my-theme.map-get(primary,30);
 
-// :root {
-//   @include mat.all-component-themes($angular-material-3-theme);
-// }
+//mat.$violet-palette;
+//$tertialy: my-theme.$tertiary-palette(tertiary,30);
+$tertialy: my-theme.$tertiary-palette;
+//$tertialy: my-theme.map-get(tertiary,30);
+
+$custom-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    //color-scheme: light dark,
+    primary: $primary,
+    tertiary: $tertialy,
+  ),
+));
+
+html {
+  @include mat.all-component-themes($custom-theme);
+ }
+
+  
+  
+
+  // @media (prefers-contrast: more) {
+  //   /* Primary palette variables */
+  //   --mat-sys-primary: light-dark(#580b2f, #ffebef);
+  //   --mat-sys-on-primary: light-dark(#ffffff, #000000);
+  // }
+//  @media (prefers-contrast: more) {
+//   @include my-theme.high-contrast-overrides(color-scheme);
+// } 
