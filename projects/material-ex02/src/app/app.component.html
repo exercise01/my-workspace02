@@ -1,4 +1,13 @@
+<!-- <button mat-icon-button (click)="!collapsed">
 
+</button> -->
+<button mat-icon-button>
+@if(darkMode()){
+    <mat-icon>light_mode</mat-icon>
+ }@else {
+    <mat-icon>darrk_mode</mat-icon>
+ }
+</button>
 <app-navi>
 <router-outlet />
 
