@@ -128,6 +128,7 @@
             ],
             "styles": [
               "_theme-colors.scss",
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "projects/material-ex02/src/styles.scss"              
             ],
             "scripts": []
@@ -188,6 +189,7 @@
             ],
             "styles": [
               "_theme-colors.scss",
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "projects/material-ex02/src/styles.scss"
             ],
             "scripts": []

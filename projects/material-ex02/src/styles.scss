@@ -5,14 +5,14 @@
 
 @include mat.core();
 //mat.$theme-ignore-duplication-warnings: false;
+
 //$primary: my-theme.$primary-palette;
 //$primary: my-theme-b.$primary-palette;
+$primary: mat.$azure-palette;//$blue-palette
 
-
-
-$primary: mat.$azure-palette;
-
- $custom-theme: mat.define-theme((
+ //頓珍漢
+ //$custom-theme: mat.define-theme((
+$light-theme: mat.define-theme((
   color: (
     theme-type: light,    
     primary: $primary, 
@@ -20,7 +20,8 @@ $primary: mat.$azure-palette;
   ),
 ));
 
- $custom-theme-dark: mat.define-theme((
+ //$custom-theme-dark: mat.define-theme((
+ $dark-theme: mat.define-theme(( 
   color: (
     theme-type: dark,    
     primary: $primary, 
@@ -29,9 +30,9 @@ $primary: mat.$azure-palette;
 ));
 
 html {
-  @include mat.all-component-themes($custom-theme);
+  @include mat.all-component-themes($light-theme);
   .dark {
-    @include mat.all-component-themes($custom-theme-dark);
+    @include mat.all-component-themes($dark-theme);
    } 
  }
 
