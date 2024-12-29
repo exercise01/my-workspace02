@@ -2,7 +2,7 @@
 <mat-sidenav-container class="sidenav-container">
    <mat-sidenav-content>
       <mat-toolbar color="primary">
-       <mat-slide-toggle [(ngModel)]="isDark" (change)="ToggleTheme()">
+       <mat-slide-toggle   (toggleChange)="ToggleTheme()">
         Slide!
        </mat-slide-toggle>
       </mat-toolbar>

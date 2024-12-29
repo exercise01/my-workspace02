@@ -1,17 +1,10 @@
-import { Component, effect, HostBinding, model, signal, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NaviComponent } from "./navi/navi.component";
 import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { FormControl, FormsModule } from '@angular/forms';
-import { OverlayContainer } from '@angular/cdk/overlay';
-
-
-//import { MatIconModule } from '@angular/material/icon';
-//import { MatButtonModule } from '@angular/material/button';
-
 
 @Component({
   selector: 'app-root',
@@ -23,10 +16,6 @@ import { OverlayContainer } from '@angular/cdk/overlay';
      MatSidenavModule,
      MatToolbarModule,
      MatSlideToggleModule,
-
-     //MatIconModule,
-     //MatButtonModule 
-     FormsModule    
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -35,9 +24,7 @@ export class AppComponent implements OnInit{
   title = 'material-ex02';
   isDark = false;
 
-  ngOnInit(){
-    
-  }
+  ngOnInit(){ }
  ToggleTheme(){
   if(!this.isDark){
     if(!document.body.classList.contains('dark')){

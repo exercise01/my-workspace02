@@ -1,17 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-
-
 @use '@angular/material' as mat;
-@use '../../../_theme-colors' as my-theme; 
-@use '../../../_theme-b-colors' as my-theme-b; 
+//@use '../../../_theme-colors' as my-theme; 
+//@use '../../../_theme-b-colors' as my-theme-b; 
 
 @include mat.core();
-
+//mat.$theme-ignore-duplication-warnings: false;
 //$primary: my-theme.$primary-palette;
 //$primary: my-theme-b.$primary-palette;
+
+
+
 $primary: mat.$azure-palette;
 
-$custom-theme: mat.define-theme((
+ $custom-theme: mat.define-theme((
   color: (
     theme-type: light,    
     primary: $primary, 
@@ -19,7 +20,7 @@ $custom-theme: mat.define-theme((
   ),
 ));
 
-$custom-theme-dark: mat.define-theme((
+ $custom-theme-dark: mat.define-theme((
   color: (
     theme-type: dark,    
     primary: $primary, 
@@ -27,41 +28,44 @@ $custom-theme-dark: mat.define-theme((
   ),
 ));
 
-html{
-  @include mat.core-theme($custom-theme);
-  @include mat.toolbar-theme($custom-theme);
-  @include mat.button-theme($custom-theme);
-  @include mat.icon-theme($custom-theme);
-  @include mat.sidenav-theme($custom-theme);
-  @include mat.tabs-theme($custom-theme);
-  @include mat.list-theme($custom-theme);
-  @include mat.card-theme($custom-theme);
-  @include mat.select-theme($custom-theme);
-  @include mat.form-field-theme($custom-theme);
-  @include mat.button-theme($custom-theme);
-  @include mat.menu-theme($custom-theme);
-  @include mat.divider-theme($custom-theme);
-  
-}
-.dark{
-  @include mat.core-theme($custom-theme-dark);
-@include mat.toolbar-theme($custom-theme-dark);
-@include mat.button-theme($custom-theme-dark);
-@include mat.icon-theme($custom-theme-dark);
-@include mat.sidenav-theme($custom-theme-dark);
-@include mat.tabs-theme($custom-theme-dark);
-@include mat.list-theme($custom-theme-dark);
-@include mat.card-theme($custom-theme-dark);
-@include mat.select-theme($custom-theme-dark);
-@include mat.form-field-theme($custom-theme-dark);
-@include mat.button-theme($custom-theme-dark);
-@include mat.menu-theme($custom-theme-dark);
-@include mat.divider-theme($custom-theme-dark);
-}
+html {
+  @include mat.all-component-themes($custom-theme);
+  .dark {
+    @include mat.all-component-themes($custom-theme-dark);
+   } 
+ }
 
-// html {
-//   @include mat.all-component-themes($custom-theme);
-//  }
+// html{
+//   @include mat.core-theme($custom-theme);
+//   @include mat.toolbar-theme($custom-theme);
+//   @include mat.button-theme($custom-theme);
+//   @include mat.icon-theme($custom-theme);
+//   @include mat.sidenav-theme($custom-theme);
+//   @include mat.tabs-theme($custom-theme);
+//   @include mat.list-theme($custom-theme);
+//   @include mat.card-theme($custom-theme);
+//   @include mat.select-theme($custom-theme);
+//   @include mat.form-field-theme($custom-theme);
+//   @include mat.button-theme($custom-theme);
+//   @include mat.menu-theme($custom-theme);
+//   @include mat.divider-theme($custom-theme);
+  
+// }
+// .dark{
+//   @include mat.core-theme($custom-theme-dark);
+// @include mat.toolbar-theme($custom-theme-dark);
+// @include mat.button-theme($custom-theme-dark);
+// @include mat.icon-theme($custom-theme-dark);
+// @include mat.sidenav-theme($custom-theme-dark);
+// @include mat.tabs-theme($custom-theme-dark);
+// @include mat.list-theme($custom-theme-dark);
+// @include mat.card-theme($custom-theme-dark);
+// @include mat.select-theme($custom-theme-dark);
+// @include mat.form-field-theme($custom-theme-dark);
+// @include mat.button-theme($custom-theme-dark);
+// @include mat.menu-theme($custom-theme-dark);
+// @include mat.divider-theme($custom-theme-dark);
+// }
 
 // html{ 
 //   --sys-primary: rgb(58 96 143);
