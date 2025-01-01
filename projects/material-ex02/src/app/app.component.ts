@@ -23,7 +23,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 export class AppComponent implements OnInit{
   title = 'material-ex02';
   isDark = false;
-  document = inject(DOCUMENT);//private readonly 
+  private readonly document = inject(DOCUMENT);// 
 
   ngOnInit(){ }
  ToggleTheme(){
