@@ -6,7 +6,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @include mat.core();
 
-$primary: mat.$azure-palette;
+$primary: mat.$cyan-palette;//cyan,azure
 
 $light-theme: mat.define-theme((
   color: (

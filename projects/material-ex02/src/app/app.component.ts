@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NaviComponent } from "./navi/navi.component";
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -23,15 +23,16 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 export class AppComponent implements OnInit{
   title = 'material-ex02';
   isDark = false;
+  private readonly document = inject(DOCUMENT);
 
   ngOnInit(){ }
  ToggleTheme(){
   if(!this.isDark){
-    if(!document.body.classList.contains('dark')){
-      document.body.classList.add('dark');
+    if(!this.document.documentElement.classList.contains('dark')){
+      this.document.documentElement.classList.add('dark');
     }else{
-      if(document.body.classList.contains('dark')){
-        document.body.classList.remove('dark');  
+      if(this.document.documentElement.classList.contains('dark')){
+        this.document.documentElement.classList.remove('dark');  
     }
   }
 }
