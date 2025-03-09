@@ -21,6 +21,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
+  
   title = 'material-ex02';
   isDark = false;
   private readonly document = inject(DOCUMENT);// 
